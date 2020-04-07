@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgress-cluster-ip-service
+spec:
+  selector:
+    app: postgress
+  ports:
+  - port: <Port>
+    targetPort: <Target Port>
