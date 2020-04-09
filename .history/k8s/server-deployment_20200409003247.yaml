@@ -28,7 +28,7 @@ spec:
               value: postgres-cluster-ip-service
             - name: PGPORT
               value: "5432"
-            - name: PGDATABASE
+            - name: PG_DATABASE
               value: postgres
             - name: POSTGRES_PASSWORD
               valueFrom:

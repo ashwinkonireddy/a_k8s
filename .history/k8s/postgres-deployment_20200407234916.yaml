@@ -12,7 +12,6 @@ spec:
       labels:
         app: postgres
     spec:
-      restartPolicy: Always
       volumes:
         - name: postgres-storage
           persistentVolumeClaim:
@@ -20,6 +19,7 @@ spec:
       containers:
         - name: postgres
           image: postgres
+
           ports:
             - containerPort: 5432
           volumeMounts:
@@ -27,8 +27,9 @@ spec:
               mountPath: /var/lib/postgresql/data
               subPath: postgres
           env:
-            - name: POSTGRES_PASSWORD
+            - name: PGPASSWORD
               valueFrom:
                 secretKeyRef:
                   name: pgpassword
                   key: PGPASSWORD
+                  
